@@ -1,0 +1,57 @@
+﻿@model assessmentTwoProject_VV.Models.Member.Member
+@if (Model == null)
+{
+    ViewData["Title"] = "Add Member";
+}
+else
+{
+    ViewData["Title"] = "Update Member";
+}
+
+<div class=" p-1 m-0 text-dark" style="background-color: rgba(255,255,255, 0.95); border-radius: 15px; border: solid 2px #808080;color: #504f54;">
+    <div class="m-3">
+        <section>
+            <form method="post" asp-action="Add">
+                <h2>@ViewData["Title"]</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Name">First Name</label><span asp-validation-for="Name" class="text-danger"> *</span>
+                            <input id="addFirstName" asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Surname"></label><span asp-validation-for="Surname" class="text-danger"> *</span>
+                            <input id="addLastName" asp-for="Surname" class="form-control" />
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="DOB"></label><span asp-validation-for="DOB" class="text-danger"> *</span>
+                            <input id="addDOB" asp-for="DOB" type="date" class="form-control" />
+                            <span asp-validation-for="DOB" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Email"></label><span asp-validation-for="Email" class="text-danger"> *</span>
+                            <input id="addEmail" asp-for="Email" type="email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber">Phone</label><span asp-validation-for="PhoneNumber" class="text-danger"> *</span>
+                            <input id="addPhoneNumber" asp-for="PhoneNumber" type="tel" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <input id="saveButton" type="submit" value="Save" class="btn btn-success float-end mt-3" style="color:#fff" />
+                    </div>
+                    <div class="col-4">
+                        <div asp-validation-summary="ModelOnly"></div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

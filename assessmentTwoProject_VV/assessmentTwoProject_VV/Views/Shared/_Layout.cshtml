@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SydneyClub</title>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
+</head>
+<body class="position-fixed w-100">
+    <header>
+        <div class="text-center p-3" style="background-color: rgba(255,255,255, 0.5);">
+            <h1 class="m-2 p-3" style="outline:solid 4px #504f54; font-weight: bolder;">Sydney Club</h1>
+        </div>
+    </header>
+    <div class="row pt-5">
+        <div class="col-3">
+            <div class="wrapper">
+                <nav id="sidebar">
+                    <ul class="list-unstyled components">
+                        <li class="sidebar-brand px-sm-3 px-md-4" style="text-align: center; background-color: rgba(255,255,255, 0.5);">
+                            <a class="sidebar-brand text-dark m-2 text-decoration-none" asp-area="" asp-controller="Member" asp-action="Details"><h2 class="py-2" style="font-weight: bolder; align-content: center;">Manage<br />Members</h2></a>
+                        </li>
+                        <li class="sidebar-nav p-sm-3 p-md-4" style="background-color: rgba(255,255,255, 0.95); text-align: center; background-color: rgba(255,255,255, 0.5);">
+                            <a id="detailsNavigation" class="text-dark text-decoration-none" asp-area="" asp-controller="Member" asp-action="Details"><h4 class="py-3" style="outline:solid 2px #504f54;">Member Details</h4></a>
+                        </li>
+                        <li class="sidebar-nav p-sm-3 p-md-4" style="background-color: rgba(255,255,255, 0.95); text-align: center; background-color: rgba(255,255,255, 0.5);">
+                            <a id="addNavigation" class="text-dark text-decoration-none" asp-area="" asp-controller="Member" asp-action="Add"><h4 class="py-3" style=" outline:solid 2px #504f54;">Add Member</h4></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="col-8">
+            <div id="content">
+                <div class="container-fluid">
+                    <div>
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <footer class="border-top border-light bg-light footer w-100 fixed-bottom">
+            <div class="container">
+                <div>Powered by lachelle-anne</div>
+            </div>
+        </footer>
+    </div>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    @*<script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>*@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
